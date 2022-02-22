@@ -1,5 +1,5 @@
 
-![banner](images/Landing Page Project-banner.png)
+![banner](images/Project-banner.png)
 
 
 # Landing Page Project
@@ -28,10 +28,10 @@ I made sure that the page is resposive across all devices, such as modern deskto
 
 ## Screenshots
 
-![App Screenshot](images/landing Page 1 .gif)   
+![App Screenshot](images/landingPage1.gif)   
 
 
-![App Screenshot](images/landing Page 2 .gif)
+![App Screenshot](images/landingPage2.gif)
 
 
 ## Authors
