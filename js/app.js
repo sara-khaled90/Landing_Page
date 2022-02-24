@@ -12,16 +12,22 @@
  * JS Standard: ESlint
  */
 
-/**  using ES6 arrow functions**/
+//  using ES6 arrow functions
+
+// global variables
+
+// set a global var for nav list
+const navigation = document.getElementById("navbar__list");
+// save the top icon  and the header in variables
+const up = document.getElementById("top");
+const pageHeader = document.querySelector(".page__header");
 
 
 // build the nav
-/** set a global var for nav list **/
-const navigation = document.getElementById("navbar__list");
-/**make the list items in navBar equal to the number of section**/
+//make the list items in navBar equal to the number of section
 const navigationItemsbuilder = () => {
   let item = "";
-/** looping over all sections **/
+// looping over all sections
   document.querySelectorAll("section").forEach((section) => {
     item += `<li><a href="#${section.id}" data-nav="${section.id}" class="menu__link" >${section.dataset.nav}</a></li>`;
   });
@@ -55,13 +61,20 @@ window.addEventListener("scroll",function() {
 	});
 });
 
-// Scroll to anchor ID using scrollTO event** I manibulate this in css using (html{ scroll-behavior: "smooth"})**//
 
-//add scroll to the top button on the page that’s only visible when the user scrolls below the fold of the page.
-/** save the top icon  and the header in variables**/
-const up = document.getElementById("top");
-const pageHeader = document.querySelector(".page__header");
-/**clicking on the icon the document will scroll up **/
+// Scroll to anchor ID using scrollIntoView smoothiy
+function smooth(event){
+const navigationLinkActive = document.querySelector(`#${event.target.dataset.nav}`);
+if (event.target.dataset.nav){
+navigationLinkActive.scrollIntoView({ behavior : "smooth"});
+}};
+navigation.addEventListener("click",smooth);
+
+
+/*
+*clicking on the icon (up) the document will scroll up
+* add scroll to the top button on the page that’s only visible when the user scrolls below the fold of the page.
+*/
 up.addEventListener("click",function(){
   document.documentElement.scrollTo({ top: 0, behavior: "smooth"});
 });
@@ -83,6 +96,3 @@ document.addEventListener("scroll",() =>{
   pageHeader.style.display = "none";
   },3000);
 });
-
-//Update/change the design/content.
-//Make sections collapsible.
